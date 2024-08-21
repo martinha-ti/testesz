@@ -1,0 +1,53 @@
+Você pode criar uma imagem que mostre o texto apenas quando o mouse passa sobre ela usando apenas HTML e CSS. Aqui está um exemplo simples de como fazer isso:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Hover Text</title>
+    <style>
+        .image-container {
+            position: relative;
+            width: 300px; /* Largura da imagem */
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+        }
+
+        .hover-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none; /* Para garantir que o texto não bloqueie o hover */
+        }
+
+        .image-container:hover .hover-text {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="sua-imagem.jpg" alt="Imagem">
+        <div class="hover-text">Seu Texto Aqui</div>
+    </div>
+</body>
+</html>
+```
+
+### Explicação:
+- **`.image-container`**: Serve como um contêiner para a imagem e o texto. A posição é definida como `relative` para permitir que o texto seja posicionado de forma absoluta em relação ao contêiner.
+- **`.hover-text`**: Este é o texto que aparecerá quando o mouse passar sobre a imagem. Ele é inicialmente invisível (`opacity: 0`) e é centralizado na imagem.
+- **`:hover`**: Quando o contêiner da imagem é "hovered" (quando o mouse passa sobre ele), a opacidade do texto é alterada para 1, tornando-o visível.
+
+Você pode ajustar os tamanhos, cores e outras propriedades conforme necessário.
